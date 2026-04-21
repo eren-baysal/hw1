@@ -168,8 +168,8 @@ VALUES (
 
 INSERT INTO agents (
     name
-),
-(
+)
+VALUES (
     'Eren Baysal'
 );
 
@@ -229,7 +229,7 @@ VALUES (
     2,
     1
 ),
-('Ra's Al Ghul',
+('Ra''s Al Ghul',
     3,
     3,
     1
@@ -301,6 +301,10 @@ VALUES (
 
 -- ***TODO!***
 -- The SQL statement for the movies output goes here.
+SELECT m.title, m.year_released, m.mpaa_rating, s.name
+FROM movies m
+JOIN studios s ON m.studio_id = s.id
+ORDER BY m.year_released;
 
 -- Example output:
 -- Movies
@@ -317,6 +321,11 @@ VALUES (
 
 -- ***TODO!***
 -- The SQL statement for the cast output goes here.
+SELECT m.title, a.name, r.name
+FROM movies m
+JOIN roles r ON m.id = r.movie_id
+JOIN actors a ON r.actor_id = a.id
+ORDER BY m.year_released, r.billing_order;
 
 -- Example output:
 -- Top Cast
@@ -345,6 +354,13 @@ VALUES (
 
 -- ***TODO!***
 -- The SQL statement for the represented actor(s) output goes here.
+UPDATE agents
+SET name = 'Ari Gold'
+WHERE id = 1;
+
+SELECT name
+FROM agents
+WHERE id = 1;
 
 -- Example output:
 -- Represented by agent
