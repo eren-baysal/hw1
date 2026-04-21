@@ -127,7 +127,7 @@ CREATE TABLE actors (
 );
 
 CREATE TABLE roles (
-    id INTEGER PRIMARY KEY,
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT,
     billing_order INTEGER,
     actor_id INTEGER,
@@ -136,7 +136,164 @@ CREATE TABLE roles (
 -- Insert data into your database that reflects the sample data shown above
 -- Use hard-coded foreign key IDs when necessary
 -- TODO!
+INSERT INTO studios (
+    name
+)
+VALUES (
+    'Warner Bros.'
+);
 
+INSERT INTO movies (
+    title,
+    year_released,
+    mpaa_rating,
+    studio_id
+)
+VALUES (
+    'Batman Begins',
+    2005,
+    'PG-13',
+    1
+),
+('The Dark Knight',
+    2008,
+    'PG-13',
+    1
+),
+('The Dark Knight Rises',
+    2012,
+    'PG-13',
+    1
+);
+
+INSERT INTO agents (
+    name
+),
+(
+    'Eren Baysal'
+);
+
+INSERT INTO actors (
+    name,
+    agent_id
+)
+VALUES (
+    'Christian Bale',
+    1
+),
+('Michael Caine',
+    1
+),
+('Liam Neeson',
+    1
+),
+('Katie Holmes',
+    1
+),
+('Gary Oldman',
+    1
+),
+('Heath Ledger',
+    1
+),
+('Aaron Eckhart',
+    1
+),
+('Maggie Gyllenhaal',
+    1
+),
+('Tom Hardy',
+    1
+),
+('Joseph Gordon-Levitt',
+    1
+),
+('Anne Hathaway',
+    1
+);
+
+INSERT INTO roles (
+    name,
+    billing_order,
+    actor_id,
+    movie_id
+)
+VALUES (
+    'Bruce Wayne',
+    1,
+    1,
+    1
+),
+('Alfred',
+    2,
+    2,
+    1
+),
+('Ra's Al Ghul',
+    3,
+    3,
+    1
+),
+('Rachel Dawes',
+    4,
+    4,
+    1
+),
+('Commissioner Gordon',
+    5,
+    5,
+    1
+),
+('Bruce Wayne',
+    1,
+    1,
+    2
+),
+('Joker',
+    2,
+    6,
+    2
+),
+('Harvey Dent',
+    3,
+    7,
+    2
+),
+('Alfred',
+    4,
+    2,
+    2
+),
+('Rachel Dawes',
+    5,
+    8,
+    2
+),
+('Bruce Wayne',
+    1,
+    1,
+    3
+),
+('Commissioner Gordon',
+    2,
+    5,
+    3
+),
+('Bane',
+    3,
+    9,
+    3
+),
+('John Blake',
+    4,
+    10,
+    3
+),
+('Selina Kyle',
+    5,
+    11,
+    3
+);
 -- Prints a header for the movies output
 .print "Movies"
 .print "======"
